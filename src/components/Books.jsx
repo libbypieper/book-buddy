@@ -22,17 +22,24 @@ function Books() {
   }, []);  
 
   if (books.length === 0) {
-    return <div>empty</div>;
+    return <div>Loading books...</div>;
   }
 
   return (
-    <main>
-     {books.map((book) => {
-      return <div className="bookCard" key={book.id} onClick={() => navigate(`/singleBook/${book.id}`)}>name: {book.title}
-    </div>;
-   })}
+    <main className="book-list">
+    {books.map((book) => (
+      <div
+        className="bookCard"
+        key={book.id}
+        onClick={() => navigate(`/books/${book.id}`)}
+        style={{ border: "1px solid #ccc", padding: "10px", margin: "10px", cursor: "pointer" }}
+      >
+        <h3>{book.title}</h3>
+        {book.imageURL && <img src={book.imageURL} alt={book.title} style={{ width: "100px" }} />}
+      </div>
+    ))}
   </main>
-  );
+);
 }
 
 
