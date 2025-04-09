@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import bookLogo from './assets/books.png'
+import Account from './components/Account'
+
 
 function App() {
   const [token, setToken] = useState(null)
