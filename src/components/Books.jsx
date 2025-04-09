@@ -28,7 +28,7 @@ function Books() {
   return (
     <main>
      {books.map((book) => {
-      return <div className="bookCard" key={book.id} onClick={navigate(`/singleBook/${book.id}`)}>name: {book.title}
+      return <div className="bookCard" key={book.id} onClick={() => navigate(`/singleBook/${book.id}`)}>name: {book.title}
     </div>;
    })}
   </main>
